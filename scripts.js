@@ -353,7 +353,14 @@ console.log(concatArray(["Hello", "World"], ["Test", "Salut"]));
 // Pour cette exercice on va utiliser la méthode filter() qui permet de filtrer un tableau, hésitez pas à regarder l'exercice 8 pour voir comment ça fonctionne. Sauf qu'ici on va filtrer en fonction de la présence de la lettre "e". Indice : la méthode includes() permet de savoir si une string contient une lettre ou un mot.
 
 // CODE ICI
+const returnIncludeE = (array) => {
+  const filteredArray = array.filter((element) => {
+    return element.includes("e");
+  });
+  return filteredArray;
+};
 
+console.log(returnIncludeE(["Poulet", "Chat", "Chien", "Cheval"]));
 //----------------------------------------------------------------------------------------------//
 
 // EXERCICE 19
@@ -363,6 +370,15 @@ console.log(concatArray(["Hello", "World"], ["Test", "Salut"]));
 // Indice : il y a plusieurs façon de faire, soit avec un for, soit avec la méthode filter() une fois ça fait utilise la méthode sort() qui permet de trier un tableau.
 
 // CODE ICI
+
+const sortEven = (array) => {
+  const filteredArray = array.filter((element) => {
+    return element % 2 === 0;
+  });
+  return filteredArray;
+};
+
+console.log(sortEven([2, 9, 6, 5, 6]));
 
 //----------------------------------------------------------------------------------------------//
 
@@ -391,6 +407,16 @@ console.log(concatArray(["Hello", "World"], ["Test", "Salut"]));
 // Indice 6 : Pour récupérer le premier élément d'un tableau tu peux utiliser la notation crochet : monTableau[0]
 
 // CODE ICI
+const findShort = (string) => {
+  const array = string.split(" ");
+  const stringLength = array.map((string) => {
+    return string.length;
+  });
+  const sorteredLength = stringLength.sort();
+  return sorteredLength[0];
+};
+
+console.log(findShort("Prachett is the best author in the world"));
 
 //----------------------------------------------------------------------------------------------//
 //----------------------------------------------------------------------------------------------//
