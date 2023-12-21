@@ -898,6 +898,50 @@ sumArr( ["2", "5", "3"], ["2", "4", "9", "5", "5"] ) should return ["4", "9", "1
 
 // CODE ICI
 
+// const sumArr = (tableau1, tableau2) => {
+//   let tableau3 = [];
+//   for (let i = 0; i < tableau1.length; i++) {
+//     if (tableau1[i] === "") {
+//       tableau1[i] = 0;
+//     }
+//     if (tableau2[i] === "") {
+//       tableau2[i] = 0;
+//     }
+//     tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]));
+//   }
+//   return tableau3;
+// };
+
+// console.log(sumArr(["1", "2", "3"], ["2", "4", "1"]));
+// console.log(sumArr(["2", "7", "3", "8", "2"], ["2", "4", "9"]));
+// console.log(sumArr(["2", "5", "3"], ["2", "4", "9", "5", "5"]));
+
+const sumArrBis = (tableau1, tableau2) => {
+  let tableau3 = [];
+
+  if (tableau1.length < tableau2.length) {
+    for (let i = 0; i < tableau2.length; i++) {
+      if (tableau1[i] === undefined) {
+        tableau1.push(0);
+      }
+      tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]));
+    }
+    return tableau3;
+  } else {
+    for (let i = 0; i < tableau1.length; i++) {
+      if (tableau2[i] === undefined) {
+        tableau2.push(0);
+      }
+      tableau3.push(parseInt(tableau1[i]) + parseInt(tableau2[i]));
+    }
+    return tableau3;
+  }
+};
+
+console.log(sumArrBis(["1", "2", "3"], ["2", "4", "1"]));
+console.log(sumArrBis(["2", "7", "3", "8", "2"], ["2", "4", "9"]));
+console.log(sumArrBis(["2", "5", "3"], ["2", "4", "9", "5", "5"]));
+
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
 // const sumArr = (tableau1, tableau2) => {
