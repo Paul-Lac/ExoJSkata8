@@ -1009,6 +1009,23 @@ let tableauClass = [
   "wizard",
 ];
 
+const generatedCharacter = () => {
+  let finalArray = [];
+  for (let i = 0; i < 11; i++) {
+    let subArray = [];
+    let randomName =
+      tableauName[Math.floor(Math.random() * tableauName.length)];
+    let randomClass =
+      tableauClass[Math.floor(Math.random() * tableauClass.length)];
+    subArray.push(randomName);
+    subArray.push(randomClass);
+    finalArray.push(subArray);
+  }
+  return finalArray;
+};
+
+console.log(generatedCharacter(tableauName, tableauClass));
+
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 // const generatedCharacter= () => {
 //     let tableau = []
@@ -1059,12 +1076,25 @@ let tableauClass = [
 
 // CODE ICI
 
+const idMissingLetter = (array) => {
+  let arrayUnicode = array.map((element) => {
+    return element.charCodeAt();
+  });
+  for (let i = 0; i < arrayUnicode.length; i++) {
+    if (arrayUnicode[i] !== arrayUnicode[i + 1] - 1) {
+      return String.fromCharCode(arrayUnicode[i] + 1);
+    }
+  }
+};
+
+console.log(idMissingLetter(["a", "b", "c", "d", "f"]));
+
 //-----------------------------------------------SOLUTIONS-----------------------------------------------//
 
 // const findMissingLetter = (tableau) => {
 //     let tableauUnicode = tableau.map((element) => {
 //         return element.charCodeAt()
-//     })
+//     });
 //     for (let i = 0; i < tableauUnicode.length; i++) {
 //         if (tableauUnicode[i] !== tableauUnicode[i + 1] - 1) {
 //             return String.fromCharCode(tableauUnicode[i] + 1)
